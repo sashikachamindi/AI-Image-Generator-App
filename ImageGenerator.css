@@ -1,0 +1,235 @@
+.ai-image-generator {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    gap: 30px;
+    font-family: 'Poppins', sans-serif;
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.header {
+    font-size: 70px;
+    font-weight: 700;
+    padding-bottom: 30px;
+    color: #fff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    background: linear-gradient(45deg, #de1b89, #f49f42);
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: headerAnimation 2s ease-out;
+}
+
+@keyframes headerAnimation {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.header span {
+    color: #f49f42;
+    font-weight: 800;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.img-loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.img-loading img {
+    width: 300px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    animation: imagePop 1s ease-out;
+}
+
+@keyframes imagePop {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.search-box {
+    display: flex;
+    width: 700px;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 50px;
+    background: #1f3540;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 0 20px;
+    animation: boxAnimation 1s ease-out;
+}
+
+@keyframes boxAnimation {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.search-input {
+    width: 500px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #de1b89;
+    border-radius: 30px;
+    padding-left: 20px;
+    font-size: 18px;
+    color: white;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #f49f42;
+    box-shadow: 0 0 10px rgba(244, 159, 66, 0.6);
+}
+
+.search-box::placeholder {
+    color: #999;
+}
+
+.generate-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 60px;
+    font-size: 22px;
+    border-radius: 50px;
+    background: linear-gradient(45deg, #de1b89, #f49f42);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.generate-btn:hover {
+    background: linear-gradient(45deg, #f49f42, #de1b89);
+    transform: scale(1.1);
+}
+
+.loading-bar {
+    width: 0px;
+    height: 10px;
+    background: #de1b89;
+    border-radius: 5px;
+    margin-top: 20px;
+    animation: loading 15s linear infinite;
+}
+
+@keyframes loading {
+    0% {
+        width: 0;
+    }
+    50% {
+        width: 128px;
+    }
+    100% {
+        width: 256px;
+    }
+}
+
+.loading-text {
+    font-size: 18px;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.loading-bar-full {
+    width: 256px;
+    height: 8px;
+    background: #de1b89;
+    border-radius: 5px;
+    transition: 15s;
+}
+
+.display-none {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .ai-image-generator {
+        margin-top: 40px;
+        margin-bottom: 10px;
+    }
+
+    .header {
+        font-size: 50px;
+    }
+
+    .search-box {
+        width: 90%;
+        height: 70px;
+    }
+
+    .search-input {
+        width: 400px;
+        font-size: 16px;
+    }
+
+    .generate-btn {
+        width: 180px;
+        height: 50px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        font-size: 40px;
+    }
+
+    .search-box {
+        flex-direction: column;
+        width: 90%;
+        height: 100px;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .search-input {
+        width: 80%;
+        font-size: 16px;
+    }
+
+    .generate-btn {
+        width: 80%;
+        height: 50px;
+        font-size: 18px;
+    }
+}
